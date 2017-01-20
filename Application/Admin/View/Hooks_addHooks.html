@@ -1,0 +1,105 @@
+<section class="content-header">
+    <h1>
+        钩子管理
+        <small></small>
+    </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                    <h3 class="box-title">新增钩子</h3>
+                </div>
+                <!-- form start -->
+                <form class="form-horizontal" action="{:U('Admin/Hooks/addHooks')}" method="post">
+                    <div class="box-body">
+                        <input class="form-control" name="id" placeholder="" value="0"
+                               type="hidden">
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">勾子名</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" name="name" placeholder="" value="{$Hooks.name}"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">勾编</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" name="number" placeholder="" value="{$Hooks.number}"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">钩子描述</label>
+
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="description"
+                                          rows="3">{$Hooks.description}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">钩子类型</label>
+
+                            <div class="col-md-7">
+                                <label class="radio-inline"><input name="type" type="radio"
+                                    <if condition="$Hooks.type eq 0">checked="checked"</if>
+                                    value="0"><span>系统钩子</span></label>
+                                <label class="radio-inline"><input name="type" type="radio"
+                                    <if condition="$Hooks.type eq 1">checked="checked"</if>
+                                    value="1"><span>插件钩子</span></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">钩子</label>
+
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="hooks"placeholder="多个钩子用逗号分隔"
+                                          rows="3">{$Hooks.hooks}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">钩子状态</label>
+
+                            <div class="col-md-7">
+                                <label class="radio-inline"><input name="status" type="radio"
+                                    <if condition="$Hooks.status eq 0">checked="checked"</if>
+                                    value="0"><span>禁用</span></label>
+                                <label class="radio-inline"><input name="status" type="radio"
+                                    <if condition="$Hooks.status eq 1">checked="checked"</if>
+                                    value="1"><span>启用</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box-footer">
+                        <div class="col-sm-2">
+                            <button type="submit" class="btn btn-block btn-danger">保存</button>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-block btn-default" onclick="history.go(-1)">取消
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!--/.col (right) -->
+    </div>
+</section>
+<script type="text/javascript">
+    $(function () {
+        if ('{$Hooks}') {
+            $('input[name="id"]').val('{$Hooks.id}');
+        }
+    });
+</script>

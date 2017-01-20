@@ -1,0 +1,52 @@
+<iframe src="http://addon.wemallshop.com" allowtransparency="true" id="myiframe"
+        style="background-color:transparent;min-height: 800px;" frameborder="0" width="100%">
+</iframe>
+
+<script type="text/javascript">
+    window.addEventListener('message', function (e) {
+        if (e.origin != 'http://addon.wemallshop.com') {
+            return
+        }
+        var data = JSON.parse(e.data);
+        install(data.path, data.filename, data.type);
+    }, false);
+    
+    function install(path, filename, type) {
+        console.log('开始下载');
+        layer.msg('正在努力下载...',{icon: 16, shade: [0.5, '#000']});
+
+        $.ajax({
+            type: "post",
+            url: "{:U('Admin/Addon/getFileDownload')}",
+            data: {
+                path: path,
+                filename: filename,
+                type: type
+            },
+            success: function (res) {
+                compare(res.savePath, res.saveName, res.fileSize);
+            }
+        });
+    }
+
+    function compare(path, filename, filesize) {
+        var interval = setInterval(function () {
+            $.ajax({
+                type: "post",
+                url: "{:U('Admin/Addon/compare')}",
+                data: {
+                    path: path,
+                    filename: filename,
+                    filesize: filesize,
+                },
+                success: function (res) {
+                    if (res == 1) {
+                        clearInterval(interval);
+                        console.log('下载完成');
+                        layer.msg('恭喜您，下载已完成!',{icon: 1,time: 2000, shade: [0.5, '#000']}); 
+                    }
+                }
+            });
+        }, 2000);
+    }
+</script>
