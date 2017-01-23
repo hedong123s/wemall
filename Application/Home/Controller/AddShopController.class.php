@@ -2,6 +2,7 @@
 namespace Home\Controller;
 
 use Think\Controller;
+use \Think\Page;
 
 class AddShopController extends Controller
 {
