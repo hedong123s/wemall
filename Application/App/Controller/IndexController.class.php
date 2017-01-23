@@ -66,8 +66,8 @@ class IndexController extends BaseController
     //pidong 通过shopid获取当前店铺信息
     public function shop(){
         $user = R("App/Public/oauthLogin");
-        var_dump(session());
-        var_dump($user);
+        //var_dump(session());
+        //var_dump($user);
         $user = json_encode($user);
         $this ->assign("user",$user);
 
@@ -75,7 +75,7 @@ class IndexController extends BaseController
             $shopId = I("get.shopid");
             session("shop_id",$shopId);           
         }
-        echo "________________".$shopId."_______________";
+        //echo "________________".$shopId."_______________";
         $configs = D("Config")->get();
         $config = D("Shop")->getShop(array('id'=>$shopId));
         $config["delivery_time"] = explode(",", $config["delivery_time"]);
@@ -87,7 +87,7 @@ class IndexController extends BaseController
         
         $wxConfig = D("WxConfig")->getJsSign();
         $this->assign("wxConfig",json_encode($wxConfig));
-        var_dump($wxConfig);
+        //var_dump($wxConfig);
         $this->display();
     }
 
