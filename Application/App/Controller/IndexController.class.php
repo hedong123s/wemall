@@ -66,6 +66,7 @@ class IndexController extends BaseController
     //pidong 通过shopid获取当前店铺信息
     public function shop(){
         $user = R("App/Public/oauthLogin");
+        var_dump(session());
         $user = json_encode($user);
         $this ->assign("user",$user);
 
@@ -85,7 +86,7 @@ class IndexController extends BaseController
         
         $wxConfig = D("WxConfig")->getJsSign();
         $this->assign("wxConfig",json_encode($wxConfig));
-        
+        var_dump($wxConfig);
         $this->display();
     }
 
