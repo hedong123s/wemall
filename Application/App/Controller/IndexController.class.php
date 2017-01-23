@@ -67,6 +67,7 @@ class IndexController extends BaseController
     public function shop(){
         $user = R("App/Public/oauthLogin");
         var_dump(session());
+        var_dump($user);
         $user = json_encode($user);
         $this ->assign("user",$user);
 
