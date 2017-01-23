@@ -75,7 +75,7 @@ class IndexController extends BaseController
             $shopId = I("get.shopid");
             session("shop_id",$shopId);           
         }
-
+        echo "________________".$shopId."_______________";
         $configs = D("Config")->get();
         $config = D("Shop")->getShop(array('id'=>$shopId));
         $config["delivery_time"] = explode(",", $config["delivery_time"]);
