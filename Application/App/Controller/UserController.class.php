@@ -112,7 +112,7 @@ class UserController extends BaseController
         // $lng = '113.673';
         $name=I('post.name');
 
-        $range = 180 / pi() * 15 / 6372.797; //里面的 15 就代表搜索 15km 之内，单位km 
+        $range = 180 / pi() * 2000 / 6372.797; //里面的 15 就代表搜索 15km 之内，单位km 
         $lngR = $range / cos($lat * pi() / 180);
         $maxLat = $lat + $range;//最大纬度
         $minLat = $lat - $range;//最小纬度 
