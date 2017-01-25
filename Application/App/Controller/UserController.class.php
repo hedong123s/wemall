@@ -110,7 +110,7 @@ class UserController extends BaseController
         $lat = I("post.lat");
         // $lat = '34.7913';
         // $lng = '113.673';
-        $name=I('post.name');
+        $name=!empty(I('post.name')) ? I('post.name') : 'XXX';
 
         $range = 180 / pi() * 2000 / 6372.797; //里面的 15 就代表搜索 15km 之内，单位km 
         $lngR = $range / cos($lat * pi() / 180);
@@ -122,7 +122,7 @@ class UserController extends BaseController
 
         $map['lng'] = array('between',array($minLng,$maxLng)); //经度值
         $map['lat'] = array('between',array($minLat,$maxLat)); //纬度值
-        $map['name']=array('like',"%$name%");//搜索
+        $map['address']=array('like',"%$name%");//搜索
         $map['status']=2;
 
         $list = D("Shop")->getShopList($map,true);
