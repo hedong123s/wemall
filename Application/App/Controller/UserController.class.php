@@ -122,7 +122,7 @@ class UserController extends BaseController
 
         $map['lng'] = array('between',array($minLng,$maxLng)); //经度值
         $map['lat'] = array('between',array($minLat,$maxLat)); //纬度值
-        $map['address']=array('like',"%$name%");//搜索
+        $map['searchkey']=array('like',"%$name%");//搜索
         $map['status']=2;
 
         $list = D("Shop")->getShopList($map,true);
