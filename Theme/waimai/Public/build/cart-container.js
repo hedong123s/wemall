@@ -3,7 +3,7 @@ template('cart-container',function($data,$filename
 /**/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$escape=$utils.$escape,config=$data.config,$out='';$out+='<div class="container-gird"> <div class="confirmation-form"> <div class="confirmation-header"> <span>订单确认</span> </div> <div class="confirmation-list" id="item-list"> <div class="dotted-divider" style="width: 105.263157894737%; margin-left: -2.9%"></div> <ul>  </ul> <div class="total-info"> <span class="items-total-amount">运费：<span id="items-total-amount">';
 $out+=$escape(config.freight);
-$out+='</span>元</span> <span class="items-total-amount">满：<span>';
+$out+='</span>元</span> <span class="items-total-amount">满A：<span>';
 $out+=$escape(config.full);
 $out+='</span>元</span> <span class="items-total-amount">减：<span>';
 $out+=$escape(config.discount);
