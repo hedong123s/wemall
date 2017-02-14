@@ -162,7 +162,7 @@ class OrderModel extends RelationModel
         $order ["delivery_time"] = $data["deliveryTime"];
 
         $config = D("Shop")->getShop(array("id" => $shopId));
-        $order ["freight"] = $config["freight"]?$config["freight"]:88;
+        $order ["freight"] = $config["freight"]?$config["freight"]:0;
 
         $order ["discount"] = $discount;
         $order ["time"] = date("Y-m-d H:i:s");
