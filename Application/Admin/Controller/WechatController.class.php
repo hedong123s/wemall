@@ -211,7 +211,7 @@ class WechatController extends Controller
 
         $this->init();
         var_dump($newmenu);
-        $json = self::$weObj->createMenu($newmenu);
+        echo $json = self::$weObj->createMenu($newmenu);
         $json = json_decode($json, true);
         var_dump($json);
         exit();
