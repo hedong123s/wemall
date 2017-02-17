@@ -1575,7 +1575,7 @@ class Wechat
      * 8、location_select：弹出地理位置选择器
 	 */
 	public function createMenu($data){
-		if (!$this->access_token && !$this->checkAuth()) return false;
+		if (!$this->access_token && !$this->checkAuth()) return 1;
 		$result = $this->http_post(self::API_URL_PREFIX.self::MENU_CREATE_URL.'access_token='.$this->access_token,self::json_encode($data));
 		if ($result)
 		{
@@ -1583,11 +1583,11 @@ class Wechat
 			if (!$json || !empty($json['errcode'])) {
 				$this->errCode = $json['errcode'];
 				$this->errMsg = $json['errmsg'];
-				return false;
+				return 2;
 			}
 			return true;
 		}
-		return false;
+		return 3;
 	}
 
 	/**
