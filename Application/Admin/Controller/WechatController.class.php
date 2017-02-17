@@ -210,9 +210,11 @@ class WechatController extends Controller
         }
 
         $this->init();
+        var_dump($newmenu);
         $json = self::$weObj->createMenu($newmenu);
         $json = json_decode($json, true);
-
+        var_dump($json);
+        exit();
         if ($json["errcode"] == 0) {
             $this->success("重新创建菜单成功!", "Admin/Weixin/wxMenuSet");
         } else {
