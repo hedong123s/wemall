@@ -428,7 +428,7 @@ function initCartDate() {
 
     if (totalPrice > parseFloat(39)) {
         totalPrice = (totalPrice - parseFloat(data.config.freight)).toFixed(2);
-        $('#items-total-amount').html(0);
+        $('#items-total-amount').html(8);
     }
 
     if (totalPrice > parseFloat(data.config.full)) {
