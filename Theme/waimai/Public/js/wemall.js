@@ -428,6 +428,7 @@ function initCartDate() {
 
     if (totalPrice > parseFloat(39)) {
         totalPrice = (totalPrice - parseFloat(data.config.freight)).toFixed(2);
+        $('#items-total-amount').html(0);
     }
 
     if (totalPrice > parseFloat(data.config.full)) {
@@ -437,7 +438,7 @@ function initCartDate() {
     $('#shopcart-sure').show();
     $('#shopcart-tip').html(totalNum);
     $('#shopcart-totalPrice').html(totalPrice);
-    $('#items-total-amount').html(0);
+
     if (totalNum == 0) {
         $('#shopcart-tip').hide();
         $('#shopcart-sure').hide();
