@@ -437,6 +437,7 @@ function initCartDate() {
     $('#shopcart-sure').show();
     $('#shopcart-tip').html(totalNum);
     $('#shopcart-totalPrice').html(totalPrice);
+    $('#items-total-amount').html(0);
     if (totalNum == 0) {
         $('#shopcart-tip').hide();
         $('#shopcart-sure').hide();
