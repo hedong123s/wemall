@@ -20,9 +20,9 @@ class UserController extends BaseController
             $user["order"] = D("Order")->getList(array("user_id" => session("userId"),"status" => array("gt", -1)), true);
         }
 
-        if (I("get.getProvince")) {
+        //if (I("get.getProvince")) {
             $user["province"] = D("LocProvince")->getList(array("shop_id"=>session("shop_id")), true);
-        }
+        //}
 
         $this->ajaxReturn($user);
     }
