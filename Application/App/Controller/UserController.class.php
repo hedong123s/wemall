@@ -21,7 +21,8 @@ class UserController extends BaseController
         }
 
         //if (I("get.getProvince")) {
-            $user["province"] = D("LocProvince")->getList(array("shop_id"=>session("shop_id")), true);
+            //$user["province"] = D("LocProvince")->getList(array("shop_id"=>session("shop_id")), true);
+        $user["province"] = D("LocProvince")->getList(array("shop_id"=>session("shop_id")), true);
         //}
 
         $this->ajaxReturn($user);
