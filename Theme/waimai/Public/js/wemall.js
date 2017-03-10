@@ -64,11 +64,11 @@ $(document).ready(function () {
     //     }
     // });
 
-    if(is_weixin()){
+    /*if(is_weixin()){
         if(isbindPhone == 0){
             openRegister();
         }         
-    }
+    }*/
     // else{
     //     //非微信浏览器下，isbindPhone等同登录状态值，1为登录
     //     if(isbindPhone == 1){
