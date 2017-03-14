@@ -2814,7 +2814,7 @@ img, fieldset {
 
 .mod-desc {
     /*margin-top: .21333rem;*/
-    height: 180px;
+    height: 0px;
     position:relative;
     background-color: #fff;
     /*border-top: 1px solid #e5e5e5;*/
