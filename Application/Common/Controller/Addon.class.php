@@ -2,7 +2,7 @@
 // +----------------------------------------------------------------------
 // | OneThink [ WE CAN DO IT JUST THINK IT ]
 // +----------------------------------------------------------------------
-// | Copyright (c) 2013 http://www.wemallshop.com All rights reserved.
+// | Copyright (c) 2013 http://www.xuegaolaile.com All rights reserved.
 // +----------------------------------------------------------------------
 // | Author: better <einsqing@gmail.com>
 // +----------------------------------------------------------------------
