@@ -2379,6 +2379,7 @@ select {
 /*home_page promotion*/
 .m-component-promotion {
     padding-top: 0px;
+    display : none;
 }
 
 .m-component-promotion > ul {
