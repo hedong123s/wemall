@@ -234,6 +234,8 @@ wx.config({
 
 //pidong 打开当前店铺
 function openTHisShop(id){
+    alert(id);
+    exit();
     window.location.href=data.baseUrl + "/App/Index/index/shopid/"+id;
     set("shopId",id);
     cartData = [];
